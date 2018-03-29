@@ -48,7 +48,12 @@ public class MainActivity extends AppCompatActivity {
     public void BMI(View view) {
         float w = Float.parseFloat(ed_weight.getText().toString());
         float h = Float.parseFloat(ed_height.getText().toString());
-        float bmi = w / (h*h);
+
+        Bundle bag = new Bundle();
+        bag.putFloat("WEIGHT",w);
+        bag.putFloat("HEIGHT",h);
+
+        //float bmi = w / (h*h);
         //Log.d("BMI", String.valueOf(bmi));
         //Toast.makeText(this, String.valueOf(bmi), Toast.LENGTH_LONG).show();
 
@@ -59,7 +64,8 @@ public class MainActivity extends AppCompatActivity {
                 //.show();
 
         Intent intent = new Intent(this, ResultActivity.class);
-        intent.putExtra("EX_BMI", 0);
+        //intent.putExtra("EX_BMI", 0);
+        intent.putExtras(bag);
         startActivity(intent);
     }
 }
