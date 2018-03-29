@@ -23,6 +23,16 @@ public class MainActivity extends AppCompatActivity {
 
         FindViews();
 
+        btn_help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("BMI說明")
+                        .setMessage("BMI=體重（Kg）/身高^2（m）")
+                        .setPositiveButton("ok", null)
+                        .show();
+            }
+        });
     }
 
     private void FindViews() {
@@ -42,8 +52,7 @@ public class MainActivity extends AppCompatActivity {
         new AlertDialog.Builder(this)
                 .setMessage("BMI="+bmi)
                 .setTitle("BMI值")
-                .setPositiveButton("ok", null)
-                .setPositiveButton("cancel", null)
+                .setPositiveButton("Cancel", null)
                 .show();
     }
 }
