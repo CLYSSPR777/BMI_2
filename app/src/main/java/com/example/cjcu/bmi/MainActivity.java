@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                 //.show();
 
         Intent intent = new Intent(this, ResultActivity.class);
-        intent.putExtra("EX_BMI", bmi);
+        intent.putExtra("EX_BMI", 0);
         startActivity(intent);
     }
 }
